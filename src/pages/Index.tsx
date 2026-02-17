@@ -48,20 +48,20 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-[#0f1a2e]">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0f1a2e]/60 via-[#0f1a2e]/80 to-[#0f1a2e] z-10" />
           <img
             src={HERO_IMAGE}
             alt="Шкаф управления"
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-30"
           />
         </div>
 
-        <div className="relative z-20 container mx-auto px-6 pt-32 pb-24 md:pt-44 md:pb-36 text-center">
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-8">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-primary font-medium">Реализованный проект</span>
+        <div className="relative z-20 container mx-auto px-6 pt-32 pb-24 md:pt-44 md:pb-36 text-center text-white">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-8">
+            <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
+            <span className="text-sm text-sky-300 font-medium">Реализованный проект</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight mb-6 max-w-4xl mx-auto">
@@ -69,22 +69,22 @@ const Index = () => {
             <span className="text-gradient">центрифугой</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
             Проектирование и производство шкафа управления промышленной
             центрифугой с системой частотного регулирования и защитой от аварийных режимов
           </p>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-white/50">
             <div className="flex items-center gap-2">
-              <Icon name="Calendar" size={16} className="text-primary" />
+              <Icon name="Calendar" size={16} className="text-sky-400" />
               <span>Срок: 45 дней</span>
             </div>
             <div className="flex items-center gap-2">
-              <Icon name="MapPin" size={16} className="text-primary" />
+              <Icon name="MapPin" size={16} className="text-sky-400" />
               <span>Россия, Екатеринбург</span>
             </div>
             <div className="flex items-center gap-2">
-              <Icon name="Factory" size={16} className="text-primary" />
+              <Icon name="Factory" size={16} className="text-sky-400" />
               <span>Нефтеперерабатывающий завод</span>
             </div>
           </div>
