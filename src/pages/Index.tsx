@@ -1,6 +1,16 @@
+import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/80ebec3a-fd58-4c76-a956-667a19e073a7/files/783013d9-3450-4cdf-8e5e-01a3db52312c.jpg";
+const PROJECT_IMAGES = [
+  { src: "https://cdn.poehali.dev/projects/80ebec3a-fd58-4c76-a956-667a19e073a7/files/783013d9-3450-4cdf-8e5e-01a3db52312c.jpg", alt: "Шкаф управления центрифугой — общий вид" },
+  { src: "https://cdn.poehali.dev/projects/80ebec3a-fd58-4c76-a956-667a19e073a7/files/9efd57b8-567c-4e45-be5a-e98eb3e0b0eb.jpg", alt: "Внутренняя компоновка ПЛК и контакторов" },
+  { src: "https://cdn.poehali.dev/projects/80ebec3a-fd58-4c76-a956-667a19e073a7/files/65e773fb-e757-4836-98f3-db92b851aa2c.jpg", alt: "Система контроля маслосистемы" },
+  { src: "https://cdn.poehali.dev/projects/80ebec3a-fd58-4c76-a956-667a19e073a7/files/691d4965-2f3a-4c46-9124-534e53f5b09b.jpg", alt: "Датчики вибрации на центрифуге" },
+  { src: "https://cdn.poehali.dev/projects/80ebec3a-fd58-4c76-a956-667a19e073a7/files/aa243d76-3234-4276-80b8-a0d8223b497e.jpg", alt: "Автоматические выключатели и частотный привод" },
+  { src: "https://cdn.poehali.dev/projects/80ebec3a-fd58-4c76-a956-667a19e073a7/files/1cc0d80a-1e42-4ba1-a2f2-e482f1989d62.jpg", alt: "Панель оператора HMI" },
+  { src: "https://cdn.poehali.dev/projects/80ebec3a-fd58-4c76-a956-667a19e073a7/files/a7789fc7-1353-4065-af67-5005b52e5721.jpg", alt: "Промышленная центрифуга" },
+  { src: "https://cdn.poehali.dev/projects/80ebec3a-fd58-4c76-a956-667a19e073a7/files/e5254f13-1f3d-41ee-b363-dea459511daf.jpg", alt: "Пусконаладочные работы" },
+];
 
 const advantages = [
   {
@@ -45,6 +55,8 @@ const industries = [
 ];
 
 const Index = () => {
+  const [activeImage, setActiveImage] = useState(0);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
@@ -52,7 +64,7 @@ const Index = () => {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-[#0f1a2e]/60 via-[#0f1a2e]/80 to-[#0f1a2e] z-10" />
           <img
-            src={HERO_IMAGE}
+            src={PROJECT_IMAGES[0].src}
             alt="Шкаф управления"
             className="w-full h-full object-cover opacity-30"
           />
@@ -70,8 +82,8 @@ const Index = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Проектирование и производство шкафа управления промышленной
-            центрифугой с системой частотного регулирования и защитой от аварийных режимов
+            Современное промышленное оборудование для автоматизированного
+            управления и мониторинга работы центрифуг различного типа
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/50">
@@ -96,28 +108,31 @@ const Index = () => {
       {/* About */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+          <div className="text-center mb-12">
+            <span className="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">
+              О проекте
+            </span>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-tight">
+              Комплексное решение для управления промышленной центрифугой
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
             <div>
-              <span className="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">
-                О проекте
-              </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 leading-tight">
-                Комплексное решение для управления промышленной центрифугой
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                По заказу нефтеперерабатывающего предприятия мы разработали и изготовили
-                шкаф управления промышленной центрифугой мощностью 75 кВт.
-                Система обеспечивает плавный пуск, частотное регулирование скорости
-                вращения и полную защиту оборудования от аварийных режимов.
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                Шкаф управления центрифугой представляет собой современное промышленное оборудование, предназначенное для автоматизированного управления и мониторинга работы центрифуг различного типа.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                Данное решение обеспечивает стабильную эксплуатацию, повышает надежность технологического процесса и снижает риск аварийных остановок оборудования. Шкаф управления оснащен системой контроля маслосистемы, включающей мониторинг давления, температуры и расхода масла в системе смазки.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                Контроль маслосистемы применим на любых центрифугах и позволяет своевременно выявлять отклонения в работе, предотвращать перегрев и износ узлов, а также продлевать срок службы центрифуги.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Проект включал проектирование электрической схемы, подбор
-                комплектующих, сборку шкафа, программирование ПЛК и пусконаладочные
-                работы на объекте заказчика. Все работы выполнены под ключ с
-                гарантией 36 месяцев.
+                Для вибрационных центрифуг предусмотрена функция контроля амплитуды вибрации. Контроль вибрации позволяет обнаруживать дисбаланс, механические повреждения и другие неисправности на ранней стадии, обеспечивая безопасную и бесперебойную работу оборудования.
               </p>
 
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-4">
                 <div className="text-center p-4 rounded-xl bg-secondary/50 border border-border">
                   <div className="text-2xl md:text-3xl font-heading font-bold text-primary mb-1">75</div>
                   <div className="text-xs text-muted-foreground">кВт мощность</div>
@@ -133,24 +148,36 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden glow-blue border border-border">
+            {/* Gallery */}
+            <div>
+              <div className="rounded-2xl overflow-hidden border border-border shadow-lg mb-4">
                 <img
-                  src={HERO_IMAGE}
-                  alt="Шкаф управления центрифугой"
-                  className="w-full aspect-[4/3] object-cover"
+                  src={PROJECT_IMAGES[activeImage].src}
+                  alt={PROJECT_IMAGES[activeImage].alt}
+                  className="w-full aspect-[4/3] object-cover transition-all duration-300"
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-card border border-border rounded-xl p-4 shadow-xl">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                    <Icon name="CheckCircle" size={20} className="text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold">Проект завершён</div>
-                    <div className="text-xs text-muted-foreground">Сдан в эксплуатацию</div>
-                  </div>
-                </div>
+              <p className="text-sm text-muted-foreground text-center mb-4">
+                {PROJECT_IMAGES[activeImage].alt}
+              </p>
+              <div className="grid grid-cols-4 gap-2">
+                {PROJECT_IMAGES.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveImage(i)}
+                    className={`rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                      activeImage === i
+                        ? "border-primary shadow-md scale-[1.02]"
+                        : "border-transparent opacity-60 hover:opacity-100"
+                    }`}
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full aspect-square object-cover"
+                    />
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -214,7 +241,7 @@ const Index = () => {
             {industries.map((item, i) => (
               <div
                 key={i}
-                className="flex items-start gap-4 p-5 rounded-xl bg-secondary/30 border border-border hover:border-primary/20 transition-all duration-300"
+                className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/20 transition-all duration-300"
               >
                 <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Icon name={item.icon} size={22} className="text-primary" />
