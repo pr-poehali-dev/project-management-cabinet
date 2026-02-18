@@ -208,7 +208,9 @@ const Index = () => {
                 key={i}
                 className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
               >
-                <Icon name={item.icon} size={32} className="mb-5 flex-shrink-0" style={{ color: "#FFA200" }} fill="#FFA200" strokeWidth={0} />
+                <div className="w-12 h-12 rounded-xl bg-[#FFA200] flex items-center justify-center mb-5 group-hover:brightness-110 transition-all">
+                  <Icon name={item.icon} size={24} className="text-white" />
+                </div>
                 <h3 className="text-lg font-heading font-semibold mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
@@ -241,7 +243,9 @@ const Index = () => {
                 key={i}
                 className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/20 transition-all duration-300"
               >
-                <Icon name={item.icon} size={28} className="flex-shrink-0 mt-0.5" style={{ color: "#FFA200" }} fill="#FFA200" strokeWidth={0} />
+                <div className="w-11 h-11 rounded-lg bg-[#FFA200] flex items-center justify-center flex-shrink-0">
+                  <Icon name={item.icon} size={22} className="text-white" />
+                </div>
                 <div>
                   <h3 className="font-heading font-semibold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
